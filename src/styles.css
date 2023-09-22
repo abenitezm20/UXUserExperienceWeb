@@ -5,9 +5,13 @@ body {
 
 body {
   margin: 0;
+  padding: 30px;
   font-family: Roboto, "Roboto", sans-serif;
   background-color: #FEFCF5;
   background-image: url('./assets/Mapa.svg');
+  background-size: 80% 80%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .tituloPrincipalA {
@@ -23,4 +27,35 @@ body {
 .tituloPrincipalC {
   font-weight: bold !important;
   color: #CDA66C;
+}
+
+.etiqueta {
+  font-weight: bold;
+  color: #453B2B;
+}
+
+.campoEntrada {
+  background-color: #DADAB8;
+}
+
+.posicionBotonesPantalla {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+}
+
+.botonConfirmar {
+  border: none;
+  background-color: #453B2B;
+  color: #FFFFFF;
+}
+
+.botonCancelar {
+  border: none;
+  margin-left: 30px;
+  background-color: #CD6E5D !important;
+  color: #FFFFFF !important;
 }

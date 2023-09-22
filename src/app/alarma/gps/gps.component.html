@@ -1,6 +1,16 @@
-<p>
-  gps works!
-</p>
+<div>
+  <!-- Campo ubicacion -->
+  <div class="row">
+    <div class="col-3">
+      <label class="mt-5 etiqueta">Nombre Ubicación</label>
+      <input class="form-control campoEntrada" type="text" placeholder="Ubicación">
+    </div>
+  </div>
 
-<button (click)="agregarUbicacion()">Agregar</button>
-<button (click)="cancelarGPS()">Cancelar</button>
+  <!-- Botones -->
+  <div class="posicionBotonesPantalla">
+    <button type="submit" class="btn btn-primary btn-lg botonConfirmar" (click)="agregarUbicacion()">Agregar</button>
+    <button type="submit" class="btn btn-secondary btn-lg botonCancelar" (click)="cancelarGPS()">Cancelar</button>
+  </div>
+
+</div>
