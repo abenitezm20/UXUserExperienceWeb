@@ -1,0 +1,26 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Roboto", sans-serif;
+  background-color: #FEFCF5;
+  background-image: url('./assets/Mapa.svg');
+}
+
+.tituloPrincipalA {
+  font-weight: bold !important;
+  color: #453B2B;
+}
+
+.tituloPrincipalB {
+  font-weight: bold !important;
+  color: #945934;
+}
+
+.tituloPrincipalC {
+  font-weight: bold !important;
+  color: #CDA66C;
+}
