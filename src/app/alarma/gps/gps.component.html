@@ -1,9 +1,17 @@
-<div>
+<div class="container">
+
   <!-- Campo ubicacion -->
   <div class="row">
     <div class="col-3">
       <label class="mt-5 etiqueta">Nombre Ubicación</label>
       <input class="form-control campoEntrada" type="text" placeholder="Ubicación">
+    </div>
+  </div>
+
+  <!-- Mapa -->
+  <div class="row">
+    <div class="mt-4">
+      <google-map width="1085px" height="400px" [center]="center" [zoom]="zoom"></google-map>
     </div>
   </div>
 

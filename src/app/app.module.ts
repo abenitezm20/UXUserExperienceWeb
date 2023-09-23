@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AlarmaModule } from './alarma/alarma.module';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 @NgModule({
   declarations: [AppComponent],
@@ -13,6 +14,7 @@ import { AlarmaModule } from './alarma/alarma.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     AlarmaModule,
+    GoogleMapsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

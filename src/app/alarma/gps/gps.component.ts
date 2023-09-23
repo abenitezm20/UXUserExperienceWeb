@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-gps',
@@ -8,6 +7,10 @@ import { environment } from '../../../environments/environment';
   styleUrls: ['./gps.component.css'],
 })
 export class GpsComponent implements OnInit {
+  center = { lat: 4.601737477957504, lng: -74.07200764845754 };
+  zoom = 15;
+  display?: google.maps.LatLngLiteral;
+
   constructor(private router: Router) {}
 
   ngOnInit() {}
