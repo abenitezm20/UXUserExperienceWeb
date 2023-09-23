@@ -59,3 +59,7 @@ body {
   background-color: #CD6E5D !important;
   color: #FFFFFF !important;
 }
+
+.errorInput {
+  color: #CD6E5D;
+}

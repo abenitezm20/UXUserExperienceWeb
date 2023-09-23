@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-crear',
@@ -7,9 +7,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./crear.component.css'],
 })
 export class CrearComponent implements OnInit {
-  constructor(private router: Router) {}
+  ubicacion: string | undefined;
+  constructor(private router: Router, private route: ActivatedRoute) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.route.queryParams.subscribe((params) => {
+      this.ubicacion = params['ubicacion'];
+      if (this.ubicacion) {
+        console.log('Ubicación seleccionada ' + this.ubicacion);
+      }
+    });
+  }
 
   crearAlarma() {
     console.log('Creando alarma');
