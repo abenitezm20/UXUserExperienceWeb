@@ -5,9 +5,11 @@ import { ListarComponent } from './listar/listar.component';
 import { CrearComponent } from './crear/crear.component';
 import { EditarComponent } from './editar/editar.component';
 import { GpsComponent } from './gps/gps.component';
+import { GoogleMapsModule } from '@angular/google-maps';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, GoogleMapsModule, ReactiveFormsModule],
   declarations: [
     ListarComponent,
     CrearComponent,

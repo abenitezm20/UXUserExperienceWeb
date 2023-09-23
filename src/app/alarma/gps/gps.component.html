@@ -1,6 +1,31 @@
-<p>
-  gps works!
-</p>
+<div class="container">
 
-<button (click)="agregarUbicacion()">Agregar</button>
-<button (click)="cancelarGPS()">Cancelar</button>
+  <!-- Campo ubicacion -->
+  <form novalidate [formGroup]="formularioUbicacion">
+    <div class="row mt-5">
+      <div class="col-3">
+        <span class="mt-5 etiqueta">Nombre Ubicación</span>
+        <input class="form-control campoEntrada" type="text" placeholder="Ubicación" formControlName="nombre"
+          maxlength="20">
+        <div class="errorInput"
+          *ngIf="(this.formularioUbicacion.get('nombre')?.errors && this.formularioUbicacion.get('nombre')?.touched) || this.errorNombre">
+          La ubicación es obligatoria*
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <!-- Mapa -->
+  <div class="row">
+    <div class="mt-4">
+      <google-map width="1085px" height="400px" [center]="center" [zoom]="zoom"></google-map>
+    </div>
+  </div>
+
+  <!-- Botones -->
+  <div class="posicionBotonesPantalla">
+    <button type="submit" class="btn btn-primary btn-lg botonConfirmar" (click)="agregarUbicacion()">Agregar</button>
+    <button type="submit" class="btn btn-secondary btn-lg botonCancelar" (click)="cancelarGPS()">Cancelar</button>
+  </div>
+
+</div>
