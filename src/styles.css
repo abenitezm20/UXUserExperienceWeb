@@ -29,6 +29,22 @@ body {
   color: #CDA66C;
 }
 
+.mat-mdc-header-cell {
+  font-weight: bold !important;
+  font-family: 'Roboto Condensed';
+  font-size: 30px;
+  color: #945934;
+  letter-spacing: 5px;
+}
+
+.mat-mdc-cell{
+  font-weight: bold;
+  font-family: 'Roboto Condensed';
+  font-size: 20px;
+  color: #000000;
+  letter-spacing: 5px;
+}
+
 .etiqueta {
   font-weight: bold;
   color: #453B2B;
@@ -62,4 +78,17 @@ body {
 
 .errorInput {
   color: #CD6E5D;
+}
+
+.posicionListadoAlarmas {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  position: absolute;
+  top: 150px;
+  right: 100px;
+}
+
+.image {
+  cursor: pointer;
 }

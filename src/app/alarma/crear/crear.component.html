@@ -5,3 +5,6 @@
 <button (click)="activarGPS()">Activar GPS</button>
 <button (click)="crearAlarma()">Crear</button>
 <button (click)="cancelarCreacion()">Cancelar</button>
+
+<input placeholder="Seleccione" [ngxTimepicker]="picker" type="text" matInput>
+<ngx-material-timepicker #picker></ngx-material-timepicker>
