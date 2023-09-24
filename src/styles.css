@@ -69,6 +69,12 @@ body {
   color: #FFFFFF;
 }
 
+.botonActivar {
+  border: none;
+  background-color: #CDA66C;
+  color: #FFFFFF;
+}
+
 .botonCancelar {
   border: none;
   margin-left: 30px;
@@ -91,4 +97,18 @@ body {
 
 .image {
   cursor: pointer;
+}
+
+.timepicker__header {
+  padding: 10px 30px !important;
+  border-top-right-radius: 12px;
+  border-top-left-radius: 12px;
+}
+
+
+.timepicker-dial {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  display: flex;
+  justify-content: center;
+  height: 44px;
 }
