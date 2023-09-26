@@ -7,9 +7,11 @@ import { EditarComponent } from './editar/editar.component';
 import { GpsComponent } from './gps/gps.component';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
+import { MatTableModule } from "@angular/material/table";
 
 @NgModule({
-  imports: [CommonModule, RouterModule, GoogleMapsModule, ReactiveFormsModule],
+  imports: [CommonModule, RouterModule, GoogleMapsModule, ReactiveFormsModule, NgxMaterialTimepickerModule, MatTableModule],
   declarations: [
     ListarComponent,
     CrearComponent,

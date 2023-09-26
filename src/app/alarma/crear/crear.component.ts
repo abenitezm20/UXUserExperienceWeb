@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-crear',
@@ -8,7 +9,36 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class CrearComponent implements OnInit {
   ubicacion: string | undefined;
-  constructor(private router: Router, private route: ActivatedRoute) {}
+  errorNombre: Boolean;
+  formularioCrearAlarma: FormGroup;
+
+  oktTheme = {
+    container: {
+      bodyBackgroundColor: "#FEFCF5",
+      buttonColor: "#CD6E5D"
+    },
+    dial: {
+      dialBackgroundColor: "#DADAB8",
+      dialActiveColor: "#453B2B",
+      dialInactiveColor: "#CDA66C"
+    },
+    clockFace: {
+      clockFaceBackgroundColor: "#DADAB8",
+      clockHandColor: "#945934",
+      clockFaceTimeInactiveColor: "#000000"
+    }
+  };
+
+
+  constructor(private router: Router, private route: ActivatedRoute) {
+    this.errorNombre = false;
+    this.formularioCrearAlarma = new FormGroup({
+      nombre: new FormControl('', [
+        Validators.required,
+        Validators.maxLength(20),
+      ]),
+    });
+  }
 
   ngOnInit() {
     this.route.queryParams.subscribe((params) => {
@@ -16,6 +46,7 @@ export class CrearComponent implements OnInit {
       if (this.ubicacion) {
         console.log('Ubicación seleccionada ' + this.ubicacion);
       }
+
     });
   }
 

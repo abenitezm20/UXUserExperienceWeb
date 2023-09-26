@@ -1,7 +1,41 @@
-<p>
-  crear works!
-</p>
+<div class="container">
 
-<button (click)="activarGPS()">Activar GPS</button>
-<button (click)="crearAlarma()">Crear</button>
-<button (click)="cancelarCreacion()">Cancelar</button>
+  <!-- Form Crear Alarma -->
+  <form novalidate [formGroup]="formularioCrearAlarma">
+    <div class="row mt-5">
+      <div class="col-3">
+        <span class="mt-5 etiqueta">Creación alarma</span>
+        <div> &nbsp; </div>
+        <input class="form-control campoEntrada" type="text" placeholder="Nombre" formControlName="nombre" maxlength="20">
+        <div class="errorInput"
+          *ngIf="(this.formularioCrearAlarma.get('nombre')?.errors && this.formularioCrearAlarma.get('nombre')?.touched) || this.errorNombre">
+          El nombre de la Alarma es obligatorio*
+        </div>
+        <div> &nbsp; </div>
+        <div >
+          <input class="form-control campoEntrada" placeholder="Hora Alarma" [ngxTimepicker]="picker" readonly formControlName="hora" maxlength="20"/>
+        </div>
+        <div> &nbsp; </div>
+        <div>
+          <button class="btn btn-primary btn-lg botonActivar" (click)="activarGPS()">Activar GPS</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<!-- Botones -->
+<div class="posicionBotonesPantalla">
+  <button type="submit" class="btn btn-primary btn-lg botonConfirmar" (click)="crearAlarma()">Crear Alarma</button>
+  <button type="submit" class="btn btn-secondary btn-lg botonCancelar" (click)="cancelarCreacion()">Cancelar</button>
+</div>
+
+<ngx-material-timepicker
+  [appendToInput]="false"
+  [disableAnimation]="true"
+  [theme]="oktTheme"
+  [timepickerClass]="'custome-class'"
+  #picker
+></ngx-material-timepicker>
+
+
