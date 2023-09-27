@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import  Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-crear',
@@ -52,6 +53,16 @@ export class CrearComponent implements OnInit {
 
   crearAlarma() {
     console.log('Creando alarma');
+
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Alarma Creada',
+      showConfirmButton: false,
+      timer: 2000
+    })
+
+    this.router.navigate(['/alarma/listar']);
   }
 
   activarGPS() {

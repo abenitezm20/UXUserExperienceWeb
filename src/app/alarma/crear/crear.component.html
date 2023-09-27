@@ -3,7 +3,7 @@
   <!-- Form Crear Alarma -->
   <form novalidate [formGroup]="formularioCrearAlarma">
     <div class="row mt-5">
-      <div class="col-3">
+      <div class="col-3" >
         <span class="mt-5 etiqueta">Creación alarma</span>
         <div> &nbsp; </div>
         <input class="form-control campoEntrada" type="text" placeholder="Nombre" formControlName="nombre" maxlength="20">
@@ -19,6 +19,24 @@
         <div>
           <button class="btn btn-primary btn-lg botonActivar" (click)="activarGPS()">Activar GPS</button>
         </div>
+      </div>
+      <div class="col-3">&nbsp;</div>
+      <div class="col-3 right">
+        <span class="mt-5 etiqueta">Seleccione la alarma</span>
+        <div> &nbsp; </div>
+        <!-- Selector Dias -->
+        <mat-button-toggle-group #group="matButtonToggleGroup" multiple=true>
+          <mat-button-toggle value=" Domingo">Dom</mat-button-toggle>
+          <mat-button-toggle value=" Lunes">Lun</mat-button-toggle>
+          <mat-button-toggle value=" Martes">Mar</mat-button-toggle>
+          <mat-button-toggle value=" Miercoles">Mie</mat-button-toggle>
+          <mat-button-toggle value=" Jueves">Jue</mat-button-toggle>
+          <mat-button-toggle value=" Viernes">Vie</mat-button-toggle>
+          <mat-button-toggle value=" Sabado">Sab</mat-button-toggle>
+        </mat-button-toggle-group>
+        <div> &nbsp; </div>
+        <span class="mt-5 etiqueta">La alarma sonará: </span>
+        <div>{{group.value}}</div>
       </div>
     </div>
   </form>
@@ -37,5 +55,6 @@
   [timepickerClass]="'custome-class'"
   #picker
 ></ngx-material-timepicker>
+
 
 

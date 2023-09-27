@@ -112,3 +112,37 @@ body {
   justify-content: center;
   height: 44px;
 }
+
+.column {
+  float: left;
+}
+
+.left {
+  width: 50%;
+  display: block;
+}
+
+.right {
+  width: 50%;
+  display: block;
+}
+
+
+/*@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';*/
+.mat-button-toggle {
+  background-color: #CDA66C;
+  color: black;
+}
+
+.mat-button-toggle-checked {
+  background-color: #453B2B;
+  color: white;
+}
+
+
+.mat-button-toggle-label-content {
+  /*line-height: 0px;
+  padding: 4px 7px;*/
+  background-color: #CDA66C;
+  color: black;
+}
