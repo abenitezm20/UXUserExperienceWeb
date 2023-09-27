@@ -50,6 +50,12 @@ body {
   color: #453B2B;
 }
 
+.textoDescripcion {
+  font-family: 'Roboto Condensed';
+  font-size: 18px;
+  color: #453B2B;
+}
+
 .campoEntrada {
   background-color: #DADAB8;
 }
@@ -139,10 +145,7 @@ body {
   color: white;
 }
 
-
 .mat-button-toggle-label-content {
-  /*line-height: 0px;
-  padding: 4px 7px;*/
   background-color: #CDA66C;
   color: black;
 }

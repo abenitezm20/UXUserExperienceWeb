@@ -19,6 +19,9 @@
         <div>
           <button class="btn btn-primary btn-lg botonActivar" (click)="activarGPS()">Activar GPS</button>
         </div>
+        <div class="textoDescripcion" *ngIf="ubicacion">
+           La ubicación seleccionada es: <b> {{ubicacion}} </b>
+        </div>
       </div>
       <div class="col-3">&nbsp;</div>
       <div class="col-3 right">
@@ -36,7 +39,7 @@
         </mat-button-toggle-group>
         <div> &nbsp; </div>
         <span class="mt-5 etiqueta">La alarma sonará: </span>
-        <div>{{group.value}}</div>
+        <div class="textoDescripcion">{{group.value}}</div>
       </div>
     </div>
   </form>
