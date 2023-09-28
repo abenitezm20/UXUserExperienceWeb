@@ -1,0 +1,151 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 30px;
+  font-family: Roboto, "Roboto", sans-serif;
+  background-color: #FEFCF5;
+  background-image: url('./assets/Mapa.svg');
+  background-size: 80% 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.tituloPrincipalA {
+  font-weight: bold !important;
+  color: #453B2B;
+}
+
+.tituloPrincipalB {
+  font-weight: bold !important;
+  color: #945934;
+}
+
+.tituloPrincipalC {
+  font-weight: bold !important;
+  color: #CDA66C;
+}
+
+.mat-mdc-header-cell {
+  font-weight: bold !important;
+  font-family: 'Roboto Condensed';
+  font-size: 30px;
+  color: #945934;
+  letter-spacing: 5px;
+}
+
+.mat-mdc-cell{
+  font-weight: bold;
+  font-family: 'Roboto Condensed';
+  font-size: 20px;
+  color: #000000;
+  letter-spacing: 5px;
+}
+
+.etiqueta {
+  font-weight: bold;
+  color: #453B2B;
+}
+
+.textoDescripcion {
+  font-family: 'Roboto Condensed';
+  font-size: 18px;
+  color: #453B2B;
+}
+
+.campoEntrada {
+  background-color: #DADAB8;
+}
+
+.posicionBotonesPantalla {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+}
+
+.botonConfirmar {
+  border: none;
+  background-color: #453B2B;
+  color: #FFFFFF;
+}
+
+.botonActivar {
+  border: none;
+  background-color: #CDA66C;
+  color: #FFFFFF;
+}
+
+.botonCancelar {
+  border: none;
+  margin-left: 30px;
+  background-color: #CD6E5D !important;
+  color: #FFFFFF !important;
+}
+
+.errorInput {
+  color: #CD6E5D;
+}
+
+.posicionListadoAlarmas {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  position: absolute;
+  top: 150px;
+  right: 100px;
+}
+
+.image {
+  cursor: pointer;
+}
+
+.timepicker__header {
+  padding: 10px 30px !important;
+  border-top-right-radius: 12px;
+  border-top-left-radius: 12px;
+}
+
+
+.timepicker-dial {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  display: flex;
+  justify-content: center;
+  height: 44px;
+}
+
+.column {
+  float: left;
+}
+
+.left {
+  width: 50%;
+  display: block;
+}
+
+.right {
+  width: 50%;
+  display: block;
+}
+
+
+/*@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';*/
+.mat-button-toggle {
+  background-color: #CDA66C;
+  color: black;
+}
+
+.mat-button-toggle-checked {
+  background-color: #453B2B;
+  color: white;
+}
+
+.mat-button-toggle-label-content {
+  background-color: #CDA66C;
+  color: black;
+}

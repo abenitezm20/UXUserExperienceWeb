@@ -1,0 +1,40 @@
+<div class="container posicionListadoAlarmas">
+  <table mat-table [dataSource]="datos" class="mat-elevation-z8" >
+
+    <ng-container matColumnDef="#">
+      <th mat-header-cell *matHeaderCellDef>#</th>
+      <td mat-cell  *matCellDef="let alarma"> {{alarma.codigo}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Alarmas">
+        <th mat-header-cell *matHeaderCellDef>Alarmas</th>
+        <td mat-cell *matCellDef="let alarma"> {{alarma.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Configuración">
+      <th mat-header-cell *matHeaderCellDef>Configuración</th>
+      <td mat-cell *matCellDef="let alarma"> {{alarma.configuracion}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Acciones">
+      <th mat-header-cell *matHeaderCellDef>Acciones</th>
+      <td mat-cell *matCellDef="let alarma">
+        <div>
+          <img class="image" src="/assets/btn_edit_24.svg" alt="Editar Alarma" width="24" height="24" (click)="editarAlarma(alarma.name)">&nbsp;
+          <img class="image" src="/assets/btn_del_24.svg" alt="Eliminar Alarma"width="24" height="24" (click)="eliminarAlarma(alarma.name)">
+        </div>
+      </td>
+    </ng-container>
+
+    <tr class=".TituloCabeceraTabla" mat-header-row *matHeaderRowDef="columnas" ></tr>
+
+    <tr class=".TituloCabeceraTabla" mat-row *matRowDef="let row; columns: columnas;"></tr>
+
+  </table>
+</div>
+
+  <!-- Botones -->
+  <div class="posicionBotonesPantalla">
+    <button type="submit" class="btn btn-primary btn-lg botonConfirmar" (click)="crearAlarma()">Crear Alarma</button>
+    <button type="submit" class="btn btn-secondary btn-lg botonCancelar" >Salir</button>
+  </div>
