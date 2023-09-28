@@ -20,8 +20,8 @@
       <th mat-header-cell *matHeaderCellDef>Acciones</th>
       <td mat-cell *matCellDef="let alarma">
         <div>
-          <img class="image" src="/assets/btn_edit_24.svg" alt="Editar Alarma" width="24" height="24" (click)="crearAlarma()">&nbsp;
-          <img class="image" src="/assets/btn_del_24.svg" alt="Eliminar Alarma"width="24" height="24" (click)="crearAlarma()">
+          <img class="image" src="/assets/btn_edit_24.svg" alt="Editar Alarma" width="24" height="24" (click)="editarAlarma(alarma.name)">&nbsp;
+          <img class="image" src="/assets/btn_del_24.svg" alt="Eliminar Alarma"width="24" height="24" (click)="eliminarAlarma(alarma.name)">
         </div>
       </td>
     </ng-container>

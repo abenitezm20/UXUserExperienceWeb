@@ -1,3 +1,58 @@
-<p>
-  editar works!
-</p>
+<div class="container">
+
+  <!-- Form Editar Alarma -->
+  <form novalidate [formGroup]="formularioEditarAlarma">
+    <div class="row mt-5">
+      <div class="col-3">
+        <span class="mt-5 etiqueta">Edición alarma</span>
+        <div> &nbsp; </div>
+        <input class="form-control campoEntrada" type="text" placeholder="Nombre" formControlName="nombre"
+          maxlength="20">
+        <div class="errorInput"
+          *ngIf="(this.formularioEditarAlarma.get('nombre')?.errors && this.formularioEditarAlarma.get('nombre')?.touched) || this.errorNombre">
+          El nombre de la Alarma es obligatorio*
+        </div>
+        <div> &nbsp; </div>
+        <div>
+          <input class="form-control campoEntrada" placeholder="Hora Alarma" [ngxTimepicker]="picker" readonly
+            maxlength="20" />
+        </div>
+        <div> &nbsp; </div>
+        <div>
+          <button class="btn btn-primary btn-lg botonActivar" (click)="activarGPS()">Activar GPS</button>
+        </div>
+        <div class="textoDescripcion" *ngIf="ubicacion">
+          La ubicación seleccionada es: <b> {{ubicacion}} </b>
+        </div>
+      </div>
+      <div class="col-3">&nbsp;</div>
+      <div class="col-3 right">
+        <span class="mt-5 etiqueta">Seleccione la alarma</span>
+        <div> &nbsp; </div>
+        <!-- Selector Dias -->
+        <mat-button-toggle-group #group="matButtonToggleGroup" multiple=true>
+          <mat-button-toggle value=" Domingo">Dom</mat-button-toggle>
+          <mat-button-toggle value=" Lunes">Lun</mat-button-toggle>
+          <mat-button-toggle value=" Martes">Mar</mat-button-toggle>
+          <mat-button-toggle value=" Miercoles">Mie</mat-button-toggle>
+          <mat-button-toggle value=" Jueves">Jue</mat-button-toggle>
+          <mat-button-toggle value=" Viernes">Vie</mat-button-toggle>
+          <mat-button-toggle value=" Sabado">Sab</mat-button-toggle>
+        </mat-button-toggle-group>
+        <div> &nbsp; </div>
+        <span class="mt-5 etiqueta">La alarma sonará: </span>
+        <div class="textoDescripcion">{{group.value}}</div>
+      </div>
+    </div>
+  </form>
+
+  <!-- Botones -->
+  <div class="posicionBotonesPantalla">
+    <button type="submit" class="btn btn-primary btn-lg botonConfirmar" (click)="editarAlarma()">Editar Alarma</button>
+    <button type="submit" class="btn btn-secondary btn-lg botonCancelar" (click)="cancelarEdicion()">Cancelar</button>
+  </div>
+
+</div>
+
+<ngx-material-timepicker [appendToInput]="false" [disableAnimation]="true" [theme]="oktTheme"
+  [timepickerClass]="'custome-class'" #picker></ngx-material-timepicker>

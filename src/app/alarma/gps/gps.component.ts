@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-gps',
@@ -15,7 +15,9 @@ export class GpsComponent implements OnInit {
   errorNombre: Boolean;
   formularioUbicacion: FormGroup;
 
-  constructor(private router: Router) {
+  nombreAlarma: String | undefined;
+
+  constructor(private router: Router, private route: ActivatedRoute) {
     this.errorNombre = false;
     this.formularioUbicacion = new FormGroup({
       nombre: new FormControl('', [
@@ -25,7 +27,14 @@ export class GpsComponent implements OnInit {
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.route.queryParams.subscribe((params) => {
+      this.nombreAlarma = params['nombre'];
+      if (this.nombreAlarma) {
+        console.log('Editando alarma');
+      }
+    });
+  }
 
   agregarUbicacion() {
     console.log('Agregando ubicacion');
@@ -39,13 +48,26 @@ export class GpsComponent implements OnInit {
     this.errorNombre = false;
     this.formularioUbicacion.reset();
 
-    this.router.navigate(['alarma/crear'], {
-      queryParams: { ubicacion: nombre },
-    });
+    if (this.nombreAlarma) {
+      this.router.navigate(['alarma/editar'], {
+        queryParams: { nombre: this.nombreAlarma, ubicacion: nombre },
+      });
+    } else {
+      this.router.navigate(['alarma/crear'], {
+        queryParams: { ubicacion: nombre },
+      });
+    }
   }
 
   cancelarGPS() {
     console.log('Cancelando activacion GPS');
-    this.router.navigate(['alarma/crear']);
+
+    if (this.nombreAlarma) {
+      this.router.navigate(['alarma/editar'], {
+        queryParams: { nombre: this.nombreAlarma },
+      });
+    } else {
+      this.router.navigate(['alarma/crear']);
+    }
   }
 }
